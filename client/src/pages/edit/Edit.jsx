@@ -78,7 +78,7 @@ const Edit = () => {
                     <input type='text' value={work} onChange={(e) => setWork(e.target.value)} />
                     <label><h3>Description:</h3></label>
                     <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} />
-                    <button disabled={isloading} className='primary-button' >Update</button>
+                    <button disabled={isloading} className='primary-button' >{isloading ? `Updating...` : `Update`}</button>
                     {error && <div className='error'>{error}</div>}
 
                 </form>

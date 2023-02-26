@@ -33,7 +33,7 @@ const Signup = () => {
                         <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
                     </div>
                 </div>
-                <button disabled={isLoading} className='success-button'>Signup</button>
+                <button disabled={isLoading} className='success-button'>{isLoading ? `Signing in` : `Signup`}</button>
                 {error && <div className='error'>{error}</div>}
 
             </form>

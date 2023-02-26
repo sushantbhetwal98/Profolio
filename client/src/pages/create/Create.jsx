@@ -72,7 +72,7 @@ const Create = () => {
                     <input type='text' onChange={(e) => setWork(e.target.value)} />
                     <label><h3>Description:</h3></label>
                     <input type='text' onChange={(e) => setDescription(e.target.value)} />
-                    <button disabled={isloading} className='success-button' >Create</button>
+                    <button disabled={isloading} className='success-button' >{isloading ? `Creating...` : `Create`}</button>
                     {error && <div className='error'>{error}</div>}
 
                 </form>

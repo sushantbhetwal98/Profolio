@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 
 // database
 const dbConnection = require('./db');
@@ -15,12 +16,20 @@ const app = express();
 
 // middlewares
 app.use(express.json());
+app.use(cors({
+    origin: ["http://localhost:3000"
+    ]
+}))
 app.use((req, res, next) => {
     console.log(req.path, req.method)
     next()
 })
 
 // routes
+app.get("/", (req, res) => {
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.send("API is Running");
+})
 app.use('/api/auth', authRoute)
 app.use('/api/professional', professionalRoute)
 

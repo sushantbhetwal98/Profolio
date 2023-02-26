@@ -25,7 +25,7 @@ const Login = () => {
                     <input type="email" placeholder='Email' onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button disable={isLoading} className='primary-button'>login</button>
+                <button disable={isLoading} className='primary-button'>{isLoading ? `Logging in` : `Login`}</button>
                 {error && <div className='error'>{error}</div>}
             </form>
         </div>

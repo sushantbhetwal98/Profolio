@@ -42,7 +42,7 @@ const Home = () => {
             <div className="bottom">
                 {professionals ? professionals.map((professional, id) => (
                     <HomeCard professional={professional} id={id} key={professional._id} />
-                )) : <p>No Items to Preview</p>}
+                )) : <p>Loading...</p>}
             </div>
         </div>
     )

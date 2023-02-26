@@ -5,8 +5,6 @@ const mongoose = require('mongoose')
 // validating the professional input
 const validate = (user_id, fullName, address, work, email, phone, description) => {
 
-    console.log(fullName, address, work, email, phone, description)
-
     if (!fullName || !address || !work || !email || !phone || !description) {
         throw Error('All the fields are required')
     }

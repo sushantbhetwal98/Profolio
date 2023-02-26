@@ -20,13 +20,14 @@ const Navbar = () => {
                 <div className="left-nav"><NavLink to="/">Pro<span>folio</span></NavLink></div>
                 <div className="right-nav">
                     {!user && (
-                        <div className='login-signup'>
+                        <div className='login-signup-nav'>
                             <NavLink to="/login">Login</NavLink>
                             <NavLink to="/signup">Signup</NavLink>
                         </div>
                     )}
                     {user && (
                         <div className="logout">
+                            <p > {user.firstname}</p>
                             <button className='logout-button' onClick={handleClick}>Logout</button>
                         </div>
                     )}
