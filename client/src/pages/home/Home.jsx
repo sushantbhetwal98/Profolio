@@ -40,9 +40,20 @@ const Home = () => {
                 <NavLink to="/create"><button className='primary-button'>Add New</button></NavLink>
             </div>
             <div className="bottom">
-                {professionals ? professionals.map((professional, id) => (
-                    <HomeCard professional={professional} id={id} key={professional._id} />
-                )) : <p>Loading...</p>}
+                {professionals ? (
+                    professionals.length > 0 ? (
+                        professionals.map((professional, id) => (
+                            <HomeCard professional={professional} id={id} key={professional._id} />
+                        ))
+                    ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', color: '#555' }}>
+                            <h4 style={{ fontSize: '18px', fontWeight: '600' }} >No data to display </h4>
+                            <p>Please Add some professionals to view your list</p>
+                        </div>
+                    )
+                ) : (
+                    <p>Loading...</p>
+                )}
             </div>
         </div>
     )
